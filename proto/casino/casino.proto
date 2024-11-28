@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package casino;
+
+import "google/protobuf/empty.proto";
+
+option go_package = "proto;casino";
+
+service CasinoService {
+  rpc ProcessRaceResult(RaceResult) returns (google.protobuf.Empty);
+}
+
+message RaceResult{
+    int32 winner_car = 1;
+}

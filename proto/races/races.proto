@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package races;
+
+import "google/protobuf/empty.proto";
+
+option go_package = "proto;races";
+
+service RaceService {
+  rpc GetRaceState(google.protobuf.Empty) returns (RaceState);
+}
+
+message RaceState {
+  bool isRaceActive = 1;
+}
